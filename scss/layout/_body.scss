@@ -1,0 +1,74 @@
+@import '../helpers/_variables.scss';
+@import '../helpers/_mixins.scss';
+
+
+[hidden]{
+  display: block;
+}
+
+.show{
+  display: block;
+}
+
+html{
+  font: 12px $font-stack;
+}
+
+header{
+  background: #111;
+  color: $font-color;
+
+  h1{
+    padding: 2em;
+    font-size: 16px;
+  }
+}
+
+h2{
+  margin-left: 2em;
+  padding-top: 2em;
+  font-size: 16px;
+}
+
+form{
+  margin-left: 3em;
+  margin-right: 3em;
+  max-width: 500px;
+  background-color: $form-bg;
+  padding: 2em;
+}
+
+.input{
+  margin-bottom: 1em;
+}
+
+label, input{
+  display: block;
+  width: 100%;
+}
+
+label{
+  margin-bottom: .25em;
+}
+
+input{
+  background-color: #e0e0e0;
+  border: 2px solid $input-bg;
+  padding: .5em;
+  border-radius: .25em;
+}
+
+button{
+  display: block;
+  border: none;
+  padding: 1em;
+  width: 100%;
+  background-color: $button-color;
+  font-size: 1em;
+  border-radius: .25em;
+  color: #fff;
+}
+
+.error{
+  color:red;
+}
