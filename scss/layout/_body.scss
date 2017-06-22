@@ -8,19 +8,25 @@
   flex-direction: column;
   background-color: $form-bg;
   height: 28em;
-  max-width: 100%;
-  padding-left: 4.5em;
-  padding-right: 4.5em;
+  max-width: 280px;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  bottom: 20em;
 
   @include mq(tablet){
-
+    padding-left: 4.5em;
+    padding-right: 4.5em;
+    bottom: 10em;
     height: 36em;
-    width: 320px;
+    max-width: 500px;
   }
 
   @include mq(desktop){
-    height: 33em;
-    width: 750px;
+    padding-left: 17.2em;
+    padding-right: 17.2em;
+    height: 32em;
+    max-width: 1200px;
+    bottom: 12em;
   }
 
   img{
@@ -43,7 +49,6 @@
 }
 
 .show{
-  opacity: 0;
   display: flex;
 }
 
@@ -97,30 +102,30 @@ form{
   position: relative;
   float: left;
   margin-bottom: 20px;
-  //bottom: 8em;
   margin-right: 9px;
 
   @include mq(tablet){
-    max-width: 320px;
-    //bottom: 0;
-    //top: 9em;
-    //height: 36em;
+    max-width: 600px;
   }
 
   @include mq(desktop){
     max-width: 750px;
-    //top: 10em;
   }
 }
 
 .formInput{
   font-size: 12px;
   margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 
   @include mq(tablet){
     font-size: 16px;
+  }
+
+  input{
+    float:left;
   }
 }
 
@@ -142,7 +147,7 @@ section{
 }
 
 input{
-  display: block;
+  //display: block;
   width: 100%;
   background-color: #e0e0e0;
   border: 2px solid $input-bg;
@@ -155,6 +160,7 @@ input{
   }
 
   @include mq(desktop){
+    font-size: 18px;
     max-width: calc(50% - 2em);
   }
 }
@@ -166,7 +172,9 @@ input{
 
 .info{
   @include mq(desktop){
-    float: right;
+    font-size: 14px;
+    width: 50%;
+    text-align: left;
   }
 }
 
@@ -198,12 +206,11 @@ select{
 
 .directory{
   display: block;
-  //float: left;
   max-width: 100%;
   margin-bottom: 2em;
 
   @include mq(tablet){
-    margin-left: 20px;
+    //margin-left: 20px;
   }
 }
 
@@ -211,10 +218,16 @@ select{
   background-color: $button-color;
   color: white;
   padding: 20px;
+  width: 290px;
+
+  @include mq(tablet){
+    width: 250px;
+  }
 }
 
-.title.required{
-  display: block;
+.contactInfo{
+  margin-top: 10px;
+  vertical-align: middle;
 }
 
 .error{

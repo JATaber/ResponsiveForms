@@ -54,6 +54,8 @@ class CheckValidity {
         if(status.valueMissing){
             this.addError('Must not be left blank');
         }
+
+        return this.errors;
     }
 
     getEmailMessages(){
@@ -64,8 +66,10 @@ class CheckValidity {
         }
 
         if(status.typeMismatch){
-            this.addError('Must be a valid email address');
+            this.addError('Please enter a valid email address');
         }
+
+        return this.errors;
     }
 
 }
@@ -82,10 +86,9 @@ submit.addEventListener("click", (event) => {
     let pswdErrorMessages = validatePassword.getMessages();
     let nameError = validateName.getNameMessages();
     let emailError = validateEmail.getEmailMessages();
+    let removeElem = elms => Array.from(elms).forEach(el => el.remove);
 
-    console.log(nameError);
-    console.log(emailError);
-
+    removeElem(document.querySelectorAll("error"));
 
     if (pswdErrorMessages.length > 0) {
         pswdErrorMessages.forEach((err) => {
@@ -100,6 +103,6 @@ submit.addEventListener("click", (event) => {
         emailField.insertAdjacentHTML('afterend', '<p class="error">'+ err + '</p>');
         });
     }else {
-    document.getElementById('form').classList.toggle("show");
+    document.getElementById('alert').classList.toggle("show");
     }
 });

@@ -7,17 +7,24 @@
           flex-direction: column;
   background-color: #f3f3f3;
   height: 28em;
-  max-width: 100%;
-  padding-left: 4.5em;
-  padding-right: 4.5em; }
+  max-width: 280px;
+  padding-left: 3.5em;
+  padding-right: 3.5em;
+  bottom: 20em; }
   @media (min-width: 600px) {
     .alert {
+      padding-left: 4.5em;
+      padding-right: 4.5em;
+      bottom: 10em;
       height: 36em;
-      width: 320px; } }
+      max-width: 500px; } }
   @media (min-width: 1200px) {
     .alert {
-      height: 33em;
-      width: 750px; } }
+      padding-left: 17.2em;
+      padding-right: 17.2em;
+      height: 32em;
+      max-width: 1200px;
+      bottom: 12em; } }
   .alert img {
     margin-left: auto;
     margin-right: auto;
@@ -33,7 +40,6 @@
         font-size: 16px; } }
 
 .show {
-  opacity: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
@@ -87,7 +93,7 @@ form {
   margin-right: 9px; }
   @media (min-width: 600px) {
     form {
-      max-width: 320px; } }
+      max-width: 600px; } }
   @media (min-width: 1200px) {
     form {
       max-width: 750px; } }
@@ -95,16 +101,19 @@ form {
 .formInput {
   font-size: 12px;
   margin-bottom: 1em;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column; }
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
   @media (min-width: 600px) {
     .formInput {
       font-size: 16px; } }
+  .formInput input, .formInput select {
+    float: left; }
 
 section {
   display: -webkit-box;
@@ -129,7 +138,6 @@ section {
       max-width: 1200px; } }
 
 input, select {
-  display: block;
   width: 100%;
   background-color: #e0e0e0;
   border: 2px solid #d7d7d7;
@@ -141,6 +149,7 @@ input, select {
       font-size: 16px; } }
   @media (min-width: 1200px) {
     input, select {
+      font-size: 18px;
       max-width: calc(50% - 2em); } }
 
 .title {
@@ -149,7 +158,9 @@ input, select {
 
 @media (min-width: 1200px) {
   .info {
-    float: right; } }
+    font-size: 14px;
+    width: 50%;
+    text-align: left; } }
 
 label {
   margin-bottom: .25em; }
@@ -176,17 +187,19 @@ select {
   display: block;
   max-width: 100%;
   margin-bottom: 2em; }
-  @media (min-width: 600px) {
-    .directory {
-      margin-left: 20px; } }
 
 .dirInfo {
   background-color: #3970E2;
   color: white;
-  padding: 20px; }
+  padding: 20px;
+  width: 290px; }
+  @media (min-width: 600px) {
+    .dirInfo {
+      width: 250px; } }
 
-.title.required {
-  display: block; }
+.contactInfo {
+  margin-top: 10px;
+  vertical-align: middle; }
 
 .error {
   color: red; }
