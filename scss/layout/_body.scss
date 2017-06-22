@@ -4,23 +4,26 @@
 
 .alert{
   position: absolute;
-  opacity: 1;
+  opacity: 0;
   display: flex;
   flex-direction: column;
-  bottom: 3.6em;
   background-color: $form-bg;
-  margin-left: 2em;
-  margin-right: 2em;
-  height: 34em;
-  //border: 1px solid red;
-  max-width: 300px;
+  height: 28em;
+  bottom: 9.7rem;
+  max-width: 100%;
   padding-left: 4.5em;
   padding-right: 4.5em;
 
   @include mq(tablet){
-    padding-left: 8.2em;
-    padding-right: 8.2em;
-    max-width: 500px;
+    top: 9rem;
+    height: 36em;
+    width: 320px;
+  }
+
+  @include mq(desktop){
+    height: 33em;
+    top: 10.5rem;
+    width: 750px;
   }
 
   img{
@@ -59,35 +62,45 @@ h1{
   padding-top: 2em;
   padding-bottom: 2em;
   font-size: 12px;
+  margin-left: auto;
   margin-right: auto;
-  margin-left: 3em;
-  max-width: 400px;
+  max-width: 300px;
+
+  @include mq(tablet){
+    font-size: 16px;
+    max-width: 600px;
+  }
+
+  @include mq(desktop){
+    font-size: 20px;
+    max-width: 1200px;
+  }
 }
 
 
 
 h2{
-  font-size: 16px;
-  margin-left: 2em;
+  font-size: 12px;
   padding-top: 2em;
+  padding-bottom: 10px;
+
+  @include mq(tablet){
+    font-size: 16px;
+  }
 }
 
 form{
   display: flex;
   flex-direction: column;
-  margin-left: 2em;
-  margin-right: 2em;
-  max-width: 300px;
+  max-width: 100%;
   background-color: $form-bg;
   padding: 2em;
   position: relative;
-  height: 34em;
   float: left;
   margin-bottom: 20px;
 
   @include mq(tablet){
-    max-width: 500px;
-    float: left;
+    max-width: 600px;
   }
 
   @include mq(desktop){
@@ -101,14 +114,26 @@ form{
   margin-bottom: 1em;
   display: flex;
   flex-direction: column;
+
+  @include mq(tablet){
+    font-size: 16px;
+  }
 }
 
 section{
   display: flex;
   flex-direction: column;
+  max-width: 300px;
+  margin-left: auto;
+  margin-right: auto;
 
   @include mq(tablet){
-    flex-direction: inherit;
+    flex-direction: row;
+    max-width: 600px;
+  }
+
+  @include mq(desktop){
+    max-width: 1200px;
   }
 }
 
@@ -119,6 +144,11 @@ input{
   border: 2px solid $input-bg;
   padding: .5em;
   border-radius: .25em;
+  font-size: 12px;
+
+  @include mq(tablet){
+    font-size: 16px;
+  }
 
   @include mq(desktop){
     max-width: calc(50% - 2em);
@@ -149,6 +179,10 @@ button{
   background-color: $button-color;
   border-radius: .25em;
   color: #fff;
+
+  @include mq(tablet){
+    font-size: 16px;
+  }
 }
 
 select{
@@ -160,24 +194,17 @@ select{
 
 .directory{
   display: block;
-  float: left;
-  max-width: 300px;
+  //float: left;
+  max-width: 100%;
   margin-bottom: 2em;
 
   @include mq(tablet){
-    max-width: 500px;
-  }
-
-  h2{
-    padding-bottom: 10px;
+    margin-left: 20px;
   }
 }
 
 .dirInfo{
-  display: block;
   background-color: $button-color;
-  margin-left: 2em;
-  margin-right: 2em;
   color: white;
   padding: 20px;
 }
