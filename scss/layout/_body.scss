@@ -2,60 +2,143 @@
 @import '../helpers/_mixins.scss';
 
 
-[hidden]{
-  display: block;
+.alert{
+  position: absolute;
+  opacity: 1;
+  display: flex;
+  flex-direction: column;
+  bottom: 3.6em;
+  background-color: $form-bg;
+  margin-left: 2em;
+  margin-right: 2em;
+  height: 34em;
+  //border: 1px solid red;
+  max-width: 300px;
+  padding-left: 4.5em;
+  padding-right: 4.5em;
+
+  @include mq(tablet){
+    padding-left: 8.2em;
+    padding-right: 8.2em;
+    max-width: 500px;
+  }
+
+  img{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: auto;
+  }
+
+  p{
+    font-size: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: auto;
+    padding-top: 10px;
+
+    @include mq(tablet){
+      font-size: 16px;
+    }
+  }
 }
 
 .show{
-  display: block;
+  opacity: 1;
 }
 
 html{
-  font: 12px $font-stack;
+  font-family: $font-stack;
 }
 
 header{
   background: #111;
   color: $font-color;
-
-  h1{
-    padding: 2em;
-    font-size: 16px;
-  }
 }
 
+h1{
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 12px;
+  margin-right: auto;
+  margin-left: 3em;
+  max-width: 400px;
+}
+
+
+
 h2{
+  font-size: 16px;
   margin-left: 2em;
   padding-top: 2em;
-  font-size: 16px;
 }
 
 form{
-  margin-left: 3em;
-  margin-right: 3em;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  margin-left: 2em;
+  margin-right: 2em;
+  max-width: 300px;
   background-color: $form-bg;
   padding: 2em;
+  position: relative;
+  height: 34em;
+  float: left;
+  margin-bottom: 20px;
+
+  @include mq(tablet){
+    max-width: 500px;
+    float: left;
+  }
+
+  @include mq(desktop){
+    max-width: 800px;
+    float: left;
+  }
 }
 
-.input{
+.formInput{
+  font-size: 12px;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
 }
 
-label, input{
-  display: block;
-  width: 100%;
-}
+section{
+  display: flex;
+  flex-direction: column;
 
-label{
-  margin-bottom: .25em;
+  @include mq(tablet){
+    flex-direction: inherit;
+  }
 }
 
 input{
+  display: block;
+  width: 100%;
   background-color: #e0e0e0;
   border: 2px solid $input-bg;
   padding: .5em;
   border-radius: .25em;
+
+  @include mq(desktop){
+    max-width: calc(50% - 2em);
+  }
+}
+
+.title{
+  display: block;
+  width: 100%
+}
+
+.info{
+  @include mq(desktop){
+    float: right;
+  }
+}
+
+label{
+  margin-bottom: .25em;
+
 }
 
 button{
@@ -64,9 +147,39 @@ button{
   padding: 1em;
   width: 100%;
   background-color: $button-color;
-  font-size: 1em;
   border-radius: .25em;
   color: #fff;
+}
+
+select{
+  @extend input;
+
+  background: url(../images/down-chevron.svg) no-repeat right #e0e0e0;
+  appearance: none;
+}
+
+.directory{
+  display: block;
+  float: left;
+  max-width: 300px;
+  margin-bottom: 2em;
+
+  @include mq(tablet){
+    max-width: 500px;
+  }
+
+  h2{
+    padding-bottom: 10px;
+  }
+}
+
+.dirInfo{
+  display: block;
+  background-color: $button-color;
+  margin-left: 2em;
+  margin-right: 2em;
+  color: white;
+  padding: 20px;
 }
 
 .error{
