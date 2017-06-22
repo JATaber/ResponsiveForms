@@ -1,6 +1,5 @@
 .alert {
-  position: absolute;
-  opacity: 0;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -10,19 +9,16 @@
           flex-direction: column;
   background-color: #f3f3f3;
   height: 28em;
-  bottom: 9.7rem;
   max-width: 100%;
   padding-left: 4.5em;
   padding-right: 4.5em; }
   @media (min-width: 600px) {
     .alert {
-      top: 9rem;
       height: 36em;
       width: 320px; } }
   @media (min-width: 1200px) {
     .alert {
       height: 33em;
-      top: 10.5rem;
       width: 750px; } }
   .alert img {
     margin-left: auto;
@@ -39,7 +35,7 @@
         font-size: 16px; } }
 
 .show {
-  opacity: 1; }
+  opacity: 0; }
 
 html {
   font-family: Helvetica Neue, Arial, sans-serif; }
@@ -76,23 +72,29 @@ form {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  opacity: 1;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  max-width: 100%;
+  max-width: 300px;
   background-color: #f3f3f3;
   padding: 2em;
-  position: relative;
+  position: absolute;
   float: left;
-  margin-bottom: 20px; }
+  margin-bottom: 20px;
+  bottom: 8em;
+  margin-right: 9px; }
   @media (min-width: 600px) {
     form {
-      max-width: 600px; } }
+      max-width: 320px;
+      bottom: 0;
+      top: 9em;
+      height: 36em; } }
   @media (min-width: 1200px) {
     form {
-      max-width: 800px;
-      float: left; } }
+      max-width: 750px;
+      top: 10em; } }
 
 .formInput {
   font-size: 12px;

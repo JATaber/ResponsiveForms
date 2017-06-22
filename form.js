@@ -69,6 +69,6 @@ if (errorMessages.length > 0) {
         passField.insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
 });
 } else {
-    document.getElementById('alert').classList.toggle("show");
+    document.getElementById('form').classList.toggle("show");
 }
 });
