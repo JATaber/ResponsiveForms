@@ -209,6 +209,10 @@ select{
   padding: 20px;
 }
 
+.title.required{
+  display: block;
+}
+
 .error{
   color:red;
 }

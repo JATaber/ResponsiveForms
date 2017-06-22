@@ -13,17 +13,17 @@
 <section>
     <div>
         <h2>REGISTER</h2>
-        <form role="main">
+        <form>
             <div class="formInput">
                 <label class="title" for="name">Name <strong>required</strong></label>
                 <input type="text" id="name" required>
             </div>
             <div class="formInput">
-                <label class="title" for="email">Email <strong>required</strong></label>
+                <label class="title required" for="email">Email <strong>required</strong></label>
                 <input type="email" id="email" required><label class="info" for="email">Must be a valid email address</label>
             </div>
             <div class="formInput">
-                <label class="title" for="password">Password <strong>required</strong></label>
+                <label class="title required" for="password">Password <strong>required</strong></label>
                 <input type="password" id="password" required><label class="info" for="password">Must contain on uppercase letter, one lowercase letter, 10 or more characters, and at least one number</label>
             </div>
             <div class="formInput">
@@ -282,7 +282,7 @@
                 <button type="submit" id="register">Register</button>
             </form>
         </div>
-    <div class="alert" role="alert">
+    <div class="alert" id="alert" role="alert">
         <img src="images/circle-check.svg" alt="confirmation checkmark">
         <p>Awesome! You're registered</p>
     </div>
@@ -290,11 +290,11 @@
         <h2>CONTACT INFORMATION</h2>
         <div class="dirInfo">
             <p>Have questions or concerns? Reach out to us directly:</p>
-            <p><img src="images/phone.svg" alt="phone icon">555.555.5555</p>
-            <p><img src="images/email.svg" alt="email icon">contact@formdemo.com</p>
+            <p><img src="images/phone.svg" alt="phone icon"> 555.555.5555</p>
+            <p><img src="images/email.svg" alt="email icon"> contact@formdemo.com</p>
         </div>
     </div>
 </section>
-
+<script src="form.js"></script>
 </body>
 </html>

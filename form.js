@@ -1,8 +1,8 @@
 // cache our inputs
-const submit = document.querySelector('button')
-const nameField = document.querySelector('#name')
-const emailField = document.querySelector('#email')
-const passField = document.querySelector('#password')
+const submit = document.querySelector('button');
+const nameField = document.querySelector('#name');
+const emailField = document.querySelector('#email');
+const passField = document.querySelector('#password');
 
 
 // Create a validity class
@@ -33,6 +33,14 @@ class CheckValidity {
             this.addError('Entry is too short');
         }
 
+        if (status.valueMissing){
+            this.addError('Must not be left blank');
+        }
+
+        if(status.typeMismatch){
+            this.addError('Must be a valid email address');
+        }
+
         if (!this.input.value.match(/[A-Z]/g)) {
             this.addError('Must contain at least one uppercase letter');
         }
@@ -61,6 +69,6 @@ if (errorMessages.length > 0) {
         passField.insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
 });
 } else {
-    alert('Form Submitted');
+    document.getElementById('alert').classList.toggle("show");
 }
 });
