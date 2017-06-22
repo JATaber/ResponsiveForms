@@ -37,10 +37,6 @@ class CheckValidity {
             this.addError('Must not be left blank');
         }
 
-        if(status.typeMismatch){
-            this.addError('Must be a valid email address');
-        }
-
         if (!this.input.value.match(/[A-Z]/g)) {
             this.addError('Must contain at least one uppercase letter');
         }
@@ -52,6 +48,26 @@ class CheckValidity {
         return this.errors;
     }
 
+    getNameMessages(){
+        const status = this.input.validity;
+
+        if(status.valueMissing){
+            this.addError('Must not be left blank');
+        }
+    }
+
+    getEmailMessages(){
+        const status = this.input.validity;
+
+        if(status.valueMissing){
+            this.addError('Must not be left blank');
+        }
+
+        if(status.typeMismatch){
+            this.addError('Must be a valid email address');
+        }
+    }
+
 }
 
 
@@ -60,15 +76,30 @@ class CheckValidity {
 
 submit.addEventListener("click", (event) => {
     event.preventDefault(); // this will stop the standard form submission.
+    let validatePassword = new CheckValidity(passField, "password");
+    let validateName = new CheckValidity(nameField);
+    let validateEmail = new CheckValidity(emailField);
+    let pswdErrorMessages = validatePassword.getMessages();
+    let nameError = validateName.getNameMessages();
+    let emailError = validateEmail.getEmailMessages();
 
-let validatePassword = new CheckValidity(passField, "password");
-let errorMessages = validatePassword.getMessages();
-// console.log(errorMessages);
-if (errorMessages.length > 0) {
-    errorMessages.forEach( (err) => {
-        passField.insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
-});
-} else {
+    console.log(nameError);
+    console.log(emailError);
+
+
+    if (pswdErrorMessages.length > 0) {
+        pswdErrorMessages.forEach((err) => {
+            passField.insertAdjacentHTML('afterend', '<p class="error">' + err + '</p>');
+        });
+    }else if(nameError.length > 0){
+        nameError.forEach((err) => {
+            nameField.insertAdjacentHTML('afterend', '<p class="error">'+ err + '</p>');
+        });
+    } else if(emailError.length > 0){
+    emailError.forEach((err) => {
+        emailField.insertAdjacentHTML('afterend', '<p class="error">'+ err + '</p>');
+        });
+    }else {
     document.getElementById('form').classList.toggle("show");
-}
+    }
 });

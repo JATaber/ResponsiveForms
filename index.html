@@ -13,10 +13,6 @@
 <section>
     <div>
         <h2>REGISTER</h2>
-        <div class="alert" id="alert" role="alert">
-            <img src="images/circle-check.svg" alt="confirmation checkmark">
-            <p>Awesome! You're registered</p>
-        </div>
         <form>
             <div id="form" class="formInput">
                 <label class="title" for="name">Name <strong>required</strong></label>
@@ -28,7 +24,7 @@
             </div>
             <div class="formInput">
                 <label class="title required" for="password">Password <strong>required</strong></label>
-                <input type="password" id="password" required><label class="info" for="password">Must contain on uppercase letter, one lowercase letter, 10 or more characters, and at least one number</label>
+                <input type="password" id="password" required pattern="[a-zA-Z0-9]" minlength="10" maxlength="100"><label class="info" for="password">Must contain on uppercase letter, one lowercase letter, 10 or more characters, and at least one number</label>
             </div>
             <div class="formInput">
                 <label class="title" for="phone">Phone</label>
@@ -286,6 +282,10 @@
                 <button type="submit" id="register">Register</button>
             </form>
         </div>
+    <div class="alert" id="alert" role="alert">
+        <img src="images/circle-check.svg" alt="confirmation checkmark">
+        <p>Awesome! You're registered</p>
+    </div>
     <div role="directory" class="directory">
         <h2>CONTACT INFORMATION</h2>
         <div class="dirInfo">

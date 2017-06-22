@@ -1,8 +1,6 @@
 .alert {
-  position: relative;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  position: absolute;
+  display: none;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -35,7 +33,10 @@
         font-size: 16px; } }
 
 .show {
-  opacity: 0; }
+  opacity: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
 
 html {
   font-family: Helvetica Neue, Arial, sans-serif; }
@@ -80,21 +81,16 @@ form {
   max-width: 300px;
   background-color: #f3f3f3;
   padding: 2em;
-  position: absolute;
+  position: relative;
   float: left;
   margin-bottom: 20px;
-  bottom: 8em;
   margin-right: 9px; }
   @media (min-width: 600px) {
     form {
-      max-width: 320px;
-      bottom: 0;
-      top: 9em;
-      height: 36em; } }
+      max-width: 320px; } }
   @media (min-width: 1200px) {
     form {
-      max-width: 750px;
-      top: 10em; } }
+      max-width: 750px; } }
 
 .formInput {
   font-size: 12px;

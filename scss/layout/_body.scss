@@ -3,8 +3,8 @@
 
 
 .alert{
-  position: relative;
-  display: flex;
+  position: absolute;
+  display: none;
   flex-direction: column;
   background-color: $form-bg;
   height: 28em;
@@ -44,6 +44,7 @@
 
 .show{
   opacity: 0;
+  display: flex;
 }
 
 html{
@@ -93,23 +94,22 @@ form{
   max-width: 300px;
   background-color: $form-bg;
   padding: 2em;
-  position: absolute;
+  position: relative;
   float: left;
   margin-bottom: 20px;
-  bottom: 8em;
+  //bottom: 8em;
   margin-right: 9px;
 
   @include mq(tablet){
     max-width: 320px;
-    bottom: 0;
-    top: 9em;
-    height: 36em;
+    //bottom: 0;
+    //top: 9em;
+    //height: 36em;
   }
 
   @include mq(desktop){
     max-width: 750px;
-    //height: 36em;
-    top: 10em;
+    //top: 10em;
   }
 }
 
